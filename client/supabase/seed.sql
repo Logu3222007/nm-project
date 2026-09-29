@@ -1,0 +1,3 @@
+-- Local dev seed data. Run automatically by `supabase db reset`.
+-- Document templates are seeded via migration 0004; nothing user-specific
+-- is seeded here since users are created through Supabase Auth.
