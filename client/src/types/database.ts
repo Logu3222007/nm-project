@@ -16,6 +16,7 @@ export interface Database {
         };
         Insert: Partial<Database["public"]["Tables"]["profiles"]["Row"]> & { user_id: string };
         Update: Partial<Database["public"]["Tables"]["profiles"]["Row"]>;
+        Relationships: [];
       };
       documents: {
         Row: {
@@ -35,6 +36,7 @@ export interface Database {
           document_type: string;
         };
         Update: Partial<Database["public"]["Tables"]["documents"]["Row"]>;
+        Relationships: [];
       };
       document_versions: {
         Row: {
@@ -54,6 +56,7 @@ export interface Database {
           created_by: string;
         };
         Update: Partial<Database["public"]["Tables"]["document_versions"]["Row"]>;
+        Relationships: [];
       };
       document_templates: {
         Row: {
@@ -73,6 +76,7 @@ export interface Database {
           document_type: string;
         };
         Update: Partial<Database["public"]["Tables"]["document_templates"]["Row"]>;
+        Relationships: [];
       };
       document_generations: {
         Row: {
@@ -92,6 +96,7 @@ export interface Database {
           input_hash: string;
         };
         Update: Partial<Database["public"]["Tables"]["document_generations"]["Row"]>;
+        Relationships: [];
       };
       document_exports: {
         Row: {
@@ -109,6 +114,7 @@ export interface Database {
           storage_path: string;
         };
         Update: Partial<Database["public"]["Tables"]["document_exports"]["Row"]>;
+        Relationships: [];
       };
       user_settings: {
         Row: {
@@ -121,6 +127,7 @@ export interface Database {
         };
         Insert: Partial<Database["public"]["Tables"]["user_settings"]["Row"]> & { user_id: string };
         Update: Partial<Database["public"]["Tables"]["user_settings"]["Row"]>;
+        Relationships: [];
       };
       audit_logs: {
         Row: {
@@ -137,6 +144,7 @@ export interface Database {
           resource_type: string;
         };
         Update: never;
+        Relationships: [];
       };
       generation_usage: {
         Row: {
@@ -146,7 +154,12 @@ export interface Database {
         };
         Insert: { user_id: string; usage_date: string; count?: number };
         Update: { count?: number };
+        Relationships: [];
       };
     };
+    Views: { [_ in never]: never };
+    Functions: { [_ in never]: never };
+    Enums: { [_ in never]: never };
+    CompositeTypes: { [_ in never]: never };
   };
 }

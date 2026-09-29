@@ -20,7 +20,7 @@ export async function listDocuments(params: DocumentListParams = {}) {
 
   if (search) query = query.ilike("title", `%${search}%`);
   if (documentType) query = query.eq("document_type", documentType);
-  if (status) query = query.eq("status", status);
+  if (status) query = query.eq("status", status as DocumentRow["status"]);
 
   if (sort === "newest") query = query.order("created_at", { ascending: false });
   else if (sort === "oldest") query = query.order("created_at", { ascending: true });
