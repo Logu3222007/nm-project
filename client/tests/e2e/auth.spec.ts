@@ -1,8 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-// These specs assume a running dev server pointed at a real (or local)
-// Supabase project — they are not executed in this environment. They
-// demonstrate the test shape described in the spec's E2E section.
+
 
 test.describe("Authentication", () => {
   test("redirects unauthenticated users from a protected route to /login", async ({ page }) => {
